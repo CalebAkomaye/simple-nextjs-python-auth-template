@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React, { useEffect, useState } from 'react';
 import TodoList from '../_components/todo-list';
 
@@ -10,8 +10,9 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`${process.env.BASE_API_URL}/api/tasks`);
+        const res = await fetch(`http://127.0.0.1:5000/api/tasks`);
         const result = await res.json();
+        console.log(result);
         setData(result);
       } catch (error: unknown) {
         // Check if the error is an instance of the Error object.
